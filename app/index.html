@@ -3,23 +3,25 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-		<title>Polymer Mini</title>
+		<title>Polymer: My First Element</title>
 		<script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 		<link rel="import" href="elements/elements.html">
+		<link rel="stylesheet" href="css/app.css" media="all"/>
 	</head>
 	<body>
 
-		<p>An example of <code>&lt;my-first-element&gt;</code>:</p>
+		<h1>Polymer: My First Element</h1>
 
-		<button>Say Something</button>
-
-		<my-first-element author='{"name": "Lord Meowser", "image": "http://placekitten.com/g/200/300"}' fancy>
-			<h2>Hello my-first-element</h2>
+		<my-first-element label="Wow" fancy>
+			Hello my-first-element
 		</my-first-element>
+
+		<button>Test it</button>
 
 		<script>
 			document.querySelector('button').addEventListener('click', function() {
-				alert(document.querySelector('my-first-element').sayHello('Hallo!'));
+				document.querySelector('my-first-element').label = "Wow again!";
+				//alert(document.querySelector('my-first-element').sayHello('Hallo!'));
 			});
 		</script>
 

@@ -8,22 +8,20 @@
 			box-sizing: border-box;
 		}
 
-		.author img {
-			float: left;
-			margin-right: 5px;
-			max-height: 100px;
-			max-width: 100px;
+		.my-first-element {
+			display: inline-block;
+			background-color: #CCC;
+			padding: 1em;
+			border-radius: 0.5em;
 		}
+
 	</style>
 
 	<template>
-		<h1>&lt;my-first-element&gt;</h1>
-		<content></content>
-		<p class="author">
-			<img src="{{author.image}}">
-			Cheers,<br/>
-			<span class="name">{{author.name}}</span>
-		</p>
+		<div class="my-first-element-box">
+			<p>{{label}}</p>
+			<content></content>
+		</div>
 	</template>
 
 </dom-module>
@@ -34,36 +32,15 @@
 
 		is: 'my-first-element',
 
+		// Define data structure
 		properties: {
-
-			/**
-			 * `fancy` indicates that the element should don a monocle and tophat,
-			 * while checking its pocket watch.
-			 */
 			fancy: Boolean,
-
-			/**
-			 * Describes the author of the element, but is really just an excuse to
-			 * show off JSDoc annotations.
-			 *
-			 * @type {{name: string, image: string}}
-			 */
-			author: {
-				type: Object,
-				// Use `value` to provides a default value for a property, by setting it
-				// on your element's prototype.
-				//
-				// If you provide a function, as we do here, Polymer will call that
-				// _per element instance_.
-				//
-				// We do that to ensure that each element gets its own copy of the
-				// value, rather than having it shared across all instances (via the
-				// prototype).
-				value: function() {
-					return {
-						name:  'Dimitri Glazkov',
-						image: 'http://addyosmani.com/blog/wp-content/uploads/2013/04/unicorn.jpg',
-					};
+			label: {
+				type: String,
+				// Use `value` to provides a default value for a property.
+				// If provided, Polymer will call that _per element instance_.
+				value: function () {
+					return "Default value";
 				}
 			},
 
