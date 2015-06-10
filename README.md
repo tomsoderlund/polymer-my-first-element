@@ -1,15 +1,14 @@
 # Polymer: My First Element
 
-The smallest Polymer example I could think of.
+Tiny [Polymer](https://www.polymer-project.org) examples to get you started.
 
 ## Dependencies
 
-Element dependencies are managed via [Bower](http://bower.io/).
-You can install that via:
+Element dependencies are managed via [Bower](http://bower.io/). You can install that via:
 
     npm install -g bower
 
-Download the element's dependencies:
+Download the dependencies:
 
     bower install
 
@@ -17,3 +16,5 @@ Download the element's dependencies:
 
 	cd app
 	python -m SimpleHTTPServer
+
+Then open `http://localhost:8000` in your browser.
